@@ -9,7 +9,7 @@ pipeline {
             }
            steps{
                 echo 'this is cloning the repo'
-                git branch: 'master', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
+                git branch: 'main', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
                 echo 'Code clone successfully'
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             }
            steps{
                 echo 'this is cloning the repo'
-                git branch: 'master', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
+                git branch: 'test', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
                 echo 'Code clone successfully'
             }
         }
