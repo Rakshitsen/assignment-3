@@ -2,6 +2,7 @@ pipeline {
     environment {
         CURRENT_BRANCH = "${env.BRANCH_NAME}"
     }
+    stages{
         stage('push-to-prod') {
             agent { label 'agent002' }
             when {
@@ -9,7 +10,7 @@ pipeline {
             }
            steps{
                 echo 'this is cloning the repo'
-                git branch: 'main', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
+                git branch: 'master', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
                 echo 'Code clone successfully'
             }
         }
@@ -20,9 +21,9 @@ pipeline {
             }
            steps{
                 echo 'this is cloning the repo'
-                git branch: 'test', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
+                git branch: 'master', credentialsId: 'Github_cred', url: 'https://github.com/Rakshitsen/jenkins-case-study.git'
                 echo 'Code clone successfully'
             }
         }
-
+    }
 }
